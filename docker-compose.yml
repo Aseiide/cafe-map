@@ -15,5 +15,5 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    environment:
-      MAP_API_KEY: ${MAP_API_KEY}
+    env_file:
+      - .env
