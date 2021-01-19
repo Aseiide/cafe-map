@@ -13,3 +13,7 @@ function initMap() {
     map: map
   });
 }
+
+window.onload = function () {
+  initMap();
+}
