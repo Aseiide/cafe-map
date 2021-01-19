@@ -1,4 +1,4 @@
-let map
+const map
 
 function initMap() {
   geocoder = new google.maps.Geocoder()
