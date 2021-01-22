@@ -16,8 +16,7 @@
 </style>
 
 <script>
-let map
-let marker
+let map = null
 
 function initMap(){
   geocoder = new google.maps.Geocoder()
@@ -29,7 +28,7 @@ function initMap(){
   });
 
   marker = new google.maps.Marker({
-    position:  {lat: 35.658584 lng: 139.7454316},
+    position:  {lat: 35.658584, lng: 139.7454316},
     map: map
   });
 
