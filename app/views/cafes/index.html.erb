@@ -17,20 +17,21 @@
 
 <script>
 let map
+let marker
 
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
   //centerにマップを表示
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.658584, lng:139.7454316},
-    zoom: 12,
+    center: {lat: 35.658584, lng: 139.7454316},
+    zoom: 15, //0~20の間で指定。
   });
 
-  // marker = new google.maps.Marker({
-  //   position:  {lat: 40.7828, lng:-73.9653},
-  //   map: map
-  // });
+  marker = new google.maps.Marker({
+    position:  {lat: 35.658584 lng: 139.7454316},
+    map: map
+  });
 
   // // 位置情報を取得
   // navigator.geolocation.getCurrentPosition(function (position) {
