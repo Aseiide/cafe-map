@@ -21,27 +21,27 @@ let map = null
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
-  //centerにマップを表示
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.658584, lng: 139.7454316},
-    zoom: 15, //0~20の間で指定。
-  });
-
-  marker = new google.maps.Marker({
-    position:  {lat: 35.658584, lng: 139.7454316},
-    map: map
-  });
-
-  // // 位置情報を取得
-  // navigator.geolocation.getCurrentPosition(function (position) {
-  // LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-  // // 取得した位置情報を中心に表示
+  // //centerにマップを表示
   // map = new google.maps.Map(document.getElementById('map'), {
-  // center: LatLng,
-  // zoom: 15
-  //     });
-  //   });
+  //   center: {lat: 35.658584, lng: 139.7454316},
+  //   zoom: 15, //0~20の間で指定。
+  // });
+
+  // marker = new google.maps.Marker({
+  //   position:  {lat: 35.658584, lng: 139.7454316},
+  //   map: map
+  // });
+
+  // 位置情報を取得
+  navigator.geolocation.getCurrentPosition(function (position) {
+  LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+  // 取得した位置情報を中心に表示
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: LatLng,
+  zoom: 15
+      });
+    });
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP_API_KEY']%>&callback=initMap" async defer></script>
