@@ -20,4 +20,3 @@ function initMap(){
 window.onload = function() {
   initMap();
 }
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['MAP_API_KEY']%>&callback=initMap" async defer></script>
