@@ -1,2 +1,8 @@
 h1
   | Test
+
+= form_for([:admin, @cafe]) do |f|
+ h4
+  | 住所
+= f.text_field :address, placeholder: "住所"
+= f.submit "登録する"
