@@ -1,5 +1,3 @@
-= form_for(@cafe) do |f|
- h4
-  | 住所
- = f.text_field :address, placeholder: "住所"
- = f.submit "登録する"
+= form_for(@cafe, url: cafes_path) do |f|
+  = f.text_field :address, placeholder: "住所"
+  = f.submit "登録する"
