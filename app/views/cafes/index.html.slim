@@ -1,14 +1,13 @@
-h1
-  | Cafes#index
+p 緯度 
+#latitude
+  = @latitude
+
+p 経度 
+#longitude
+  = @longitude
 p
   | Find me in app/views/cafes/index.html.erb
-p
-  | 新規登録
-= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"
-h2
-  | gmap
 #map
-
 style
   | #map { height: 600px; width: 600px; }
 
