@@ -10,6 +10,7 @@ function initMap(){
       zoom: 14
     });
 
+    //データベースから緯度経度を取ってくる
     //緯度経度を定義
     const latitude = parseFloat(document.getElementById('latitude').textContent);
     const longitude = parseFloat(document.getElementById('longitude').textContent);
