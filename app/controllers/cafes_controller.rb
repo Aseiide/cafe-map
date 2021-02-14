@@ -1,13 +1,12 @@
 class CafesController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
-  def new
-  end
-
-  def edit
+  def create
+    @cafe = Cafe.new
+    @latitude = Cafe.new
+    @longitude = Cafe.new
+    #保存
+    @cafe.save
+    @latitude.save
+    @longitude.save
+    binding.pry
   end
 end
