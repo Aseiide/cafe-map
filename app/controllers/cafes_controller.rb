@@ -1,12 +1,13 @@
 class CafesController < ApplicationController
   def create
-    @cafe = Cafe.new
-    @latitude = Cafe.new
-    @longitude = Cafe.new
+    @cafe = Cafe.new(cafe_params)
+    # @latitude = Cafe.new
+    # @longitude = Cafe.new
     #保存
     @cafe.save
-    @latitude.save
-    @longitude.save
     binding.pry
+  end
+  def cafe_params
+    params.require(:cafe).permit(:address)
   end
 end

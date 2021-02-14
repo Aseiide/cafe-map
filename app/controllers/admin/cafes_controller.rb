@@ -7,5 +7,6 @@ class Admin::CafesController < Admin::BaseController
     result = JSON.parse(response.body)
     @latitude = result["results"][0]["geometry"]["location"]["lat"]
     @longitude = result["results"][0]["geometry"]["location"]["lng"]
+    @cafe = Cafe.new
   end
 end
