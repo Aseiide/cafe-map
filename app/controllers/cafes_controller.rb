@@ -1,10 +1,6 @@
 class CafesController < ApplicationController
   def create
-    @cafe = Cafe.new(
-      cafe_params,
-      latitude: @result["results"][0]["geometry"]["location"]["lat"],
-      longitude: @result["results"][0]["geometry"]["location"]["lng"]
-    )
+    @cafe = Cafe.new(cafe_params)
     #保存
     @cafe.save
     redirect_to cafes_path
