@@ -10,10 +10,11 @@ class CafesController < ApplicationController
       latitude: @result["results"][0]["geometry"]["location"]["lat"],
       longitude: @result["results"][0]["geometry"]["location"]["lng"]
     )
-    binding.pry
     #保存
-    @cafe.save
-    redirect_to cafes_path
+    if @cafe.save
+      puts "保存に成功"
+      redirect_to cafes_path
+    end
   end
   def cafe_params
     params.require(:cafe).permit(:address, :latitude, :longitude)
