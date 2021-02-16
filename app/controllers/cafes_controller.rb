@@ -6,7 +6,7 @@ class CafesController < ApplicationController
     response = Net::HTTP.get_response(uri)
     @result = JSON.parse(response.body)
     @cafe = Cafe.new(
-      address: cafe_params,
+      address: cafe_params["address"],
       latitude: @result["results"][0]["geometry"]["location"]["lat"],
       longitude: @result["results"][0]["geometry"]["location"]["lng"]
     )
