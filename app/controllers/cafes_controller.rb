@@ -16,7 +16,10 @@ class CafesController < ApplicationController
       redirect_to cafes_path
     end
   end
-  def cafe_params
-    params.require(:cafe).permit(:address, :latitude, :longitude)
-  end
+  
+  private
+  
+    def cafe_params
+      params.require(:cafe).permit(:address, :latitude, :longitude)
+    end
 end
