@@ -15,7 +15,7 @@ class CafesController < ApplicationController
       puts "保存に成功"
       redirect_to cafes_path
     else
-      puts "保存に失敗しました"
+      flash[:danger] = "保存に失敗しました"
       redirect_to new_admin_cafe_path
     end
   end
