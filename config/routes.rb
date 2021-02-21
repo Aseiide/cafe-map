@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :cafes
   get '/signup', to: 'users#new'
   namespace :admin do
-    resources :cafes, only: %i(new)
+    resources :cafes, only: %i(new create)
   end
 end
