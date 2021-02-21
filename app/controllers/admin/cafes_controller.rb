@@ -17,7 +17,7 @@ class Admin::CafesController < Admin::BaseController
       puts "保存に成功"
       redirect_to cafes_path
     else
-      flash[:danger] = "保存に失敗しました"
+      flash.now[:danger] = "保存に失敗しました"
       render action: :new
     end
   end
