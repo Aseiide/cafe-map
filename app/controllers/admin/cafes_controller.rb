@@ -3,8 +3,10 @@ class Admin::CafesController < Admin::BaseController
     @cafes = Cafe.select("name, latitude, longitude, address")
     render json: @cafes
   end
+
   def new
   end
+  
   def create
     address = params[:cafe]
     params = URI.encode_www_form({address: address})
