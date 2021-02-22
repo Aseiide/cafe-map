@@ -1,4 +1,4 @@
-= form_with model:Cafe, url: admin_cafes_path, local: true do |f|
+= form_with model:@cafe, url: admin_cafes_path, local: true do |f|
   = f.text_field :name, placeholder: "LUCENT COFFEE"
   = f.text_field :address, placeholder: "東京都港区芝公園4-2−8"
   = f.submit "登録する"

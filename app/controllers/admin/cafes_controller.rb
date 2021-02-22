@@ -1,5 +1,6 @@
 class Admin::CafesController < Admin::BaseController
   def new
+    @cafe = Cafe.new
   end
 
   def create
@@ -8,6 +9,7 @@ class Admin::CafesController < Admin::BaseController
     uri = URI.parse("https://maps.googleapis.com/maps/api/geocode/json?#{params}&key=#{ENV["MAP_API_KEY"]}")
     response = Net::HTTP.get_response(uri)
     @result = JSON.parse(response.body)
+    binding.pry
     @cafe = Cafe.new(
       name: cafe_params["name"],
       address: cafe_params["address"],
@@ -26,6 +28,6 @@ class Admin::CafesController < Admin::BaseController
   private
   
     def cafe_params
-      params.require(:cafe).permit(:name, :address, :latitude, :longitude)
+      params.permit(:name, :address, :latitude, :longitude)
     end
 end
