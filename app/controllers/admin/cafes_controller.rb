@@ -1,4 +1,8 @@
 class Admin::CafesController < Admin::BaseController
+  def index
+    @cafes = Cafe.select("name, latitude, longitude, address")
+    render json: @cafes
+  end
   def new
   end
   def create
