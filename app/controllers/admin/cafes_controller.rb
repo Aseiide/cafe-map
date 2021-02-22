@@ -1,9 +1,10 @@
 class Admin::CafesController < Admin::BaseController
   def new
   end
+
   def create
-    address = params[:cafe]
-    params = URI.encode_www_form({address: address})
+    shop = params[:cafe]
+    params = URI.encode_www_form({address: shop})
     uri = URI.parse("https://maps.googleapis.com/maps/api/geocode/json?#{params}&key=#{ENV["MAP_API_KEY"]}")
     response = Net::HTTP.get_response(uri)
     @result = JSON.parse(response.body)
