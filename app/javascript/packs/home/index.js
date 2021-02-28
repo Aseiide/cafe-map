@@ -14,3 +14,5 @@ function initMap(){
 window.onload = function() {
   initMap();
 }
+
+window.alert(gon.user_name)
