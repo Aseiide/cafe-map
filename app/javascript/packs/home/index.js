@@ -12,7 +12,10 @@ function initMap() {
     });
 
     //lat, lngに緯度経度渡すと、ピン表示出来る
-    const myLatLng = { lat: -25.363, lng: 131.044 };
+    const lat = document.getElementById("lat").textContent;
+    const lng = document.getElementById("lng").textContent;
+    
+    const myLatLng = { lat: Number(lat) , lng: Number(lng) };
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 4,
         center: myLatLng,
