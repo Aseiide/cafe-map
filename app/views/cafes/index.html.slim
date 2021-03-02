@@ -5,7 +5,4 @@ script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&ca
 style
   | #map { height: 600px; width: 600px; }
 
-#lat
-  = @test.latitude
-#lng 
-  = @test.longitude
+= @cafe.location

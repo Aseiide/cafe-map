@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
 
   def index
-    @test = Cafe.last
+    @cafe = Cafe.new
   end
 end
