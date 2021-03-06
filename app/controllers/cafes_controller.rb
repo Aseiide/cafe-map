@@ -1,5 +1,6 @@
 class CafesController < ApplicationController
   def index
-    @test = Cafe.last.latitude
+    @cafe_latitude = Cafe.last.latitude
+    @cafe_longitude = Cafe.last.longitude
   end
 end
