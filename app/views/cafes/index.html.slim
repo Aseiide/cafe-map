@@ -1,10 +1,8 @@
+=javascript_pack_tag 'home/index'
+script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback=initMap"
 
-p
-  | Find me in app/views/cafes/index.html.erb
-#map
+#map data-location=@test
+
 style
   | #map { height: 600px; width: 600px; }
-
-=javascript_pack_tag 'home/index'
-
-script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback=initMap"
+  
