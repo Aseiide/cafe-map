@@ -27,7 +27,5 @@ Things you may want to cover:
 
 ```
 touch .env
-docker-compose build
-docker-compose run web rake db:create
-docker-compose up
+docker-compose up --build
 ```
