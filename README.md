@@ -1,32 +1,19 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Cafe Map
 
 ## How to start
 
 ```
-docker-compose build
-docker-compose run web rake db:create
+touch .env
+docker-compose up --build
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails webpacker:install
+bundle exec rails server
+```
+
+## How to develop
+```
 docker-compose up
+bundle exec rails server
+docker-compose stop
 ```
