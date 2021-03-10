@@ -10,12 +10,11 @@ function initMap(){
       zoom: 15
     });
 
-    const lat = document.getElementById("lat").dataset.lat
-    const lng = document.getElementById("lng").dataset.lng
-    const Store = {lat: parseFloat(lat), lng: parseFloat(lng)} 
-
     for (var i = 0; i<markerData.length; i++){
       let id = markerData[i]["id"]
+      const lat = document.getElementById("lat").dataset.lat
+      const lng = document.getElementById("lng").dataset.lng
+      const Store = {lat: parseFloat(lat), lng: parseFloat(lng)} 
 
       markerLatLng = new google.maps.LatLng({
         lat: lat[i],
