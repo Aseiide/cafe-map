@@ -1,6 +1,18 @@
 class CafesController < ApplicationController
   def index
-    @cafe_latitude = Cafe.select("latitude").last(5)
-    @cafe_longitude = Cafe.select("longitude").last(5)
+    @all_cafe_position = Cafe.all.pluck(:latitude, :longitude)
+    # @cafe_latitude = cafe_latitude
+    # @cafe_longitude = cafe_longitude
   end
+
+  private
+
+    # def cafe_latitude
+    #   @all_cafe.pluck(:latitude)
+    # end
+
+    # def cafe_longitude
+    #   @all_cafe.pluck(:longitude)
+    # end
 end
+

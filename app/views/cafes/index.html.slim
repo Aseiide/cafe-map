@@ -1,9 +1,12 @@
-=javascript_pack_tag 'home/index'
-script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback"
-
 #map 
-#lat data-lat=@cafe_latitude
-#lng data-lng=@cafe_longitude
+#marker-data data-position=@all_cafe_position
+/ #lat data-lat=@cafe_latitude
+/ #lng data-lng=@cafe_longitude
 
+// dataより後にjsがないと、jsでdataを取れない
+=javascript_pack_tag 'home/index'
+
+// mapはdata属性より下に書いておかないと、mapが読み込まれないエラーが起きた時にデバッグできなくなる
+script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback"
 style
   | #map { height: 600px; width: 600px; }
