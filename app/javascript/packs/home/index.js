@@ -2,7 +2,6 @@ let marker = [];
 let markerData = JSON.parse(document.querySelector("#marker-data").dataset.position);
 
 function initMap() {
-  geocoder = new google.maps.Geocoder();
   // 位置情報を取得して中心に表示
   navigator.geolocation.getCurrentPosition(function(position) {
     LatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
