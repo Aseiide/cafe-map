@@ -1,6 +1,11 @@
 = form_with model:@cafe, url: admin_cafes_path, local: true do |f|
-  = f.text_field :name, placeholder: "XX COFFEE RASTER"
-  = f.text_field :address, placeholder: "東京都港区芝公園4-2−8"
-  = f.submit "登録する", class: "btn btn-primary"
+  .form-group
+    p 店舗名を入力
+    = f.text_field :name, placeholder: "XX COFFEE RASTER", class: "form-control"
+    br
+    p 住所を入力
+    = f.text_field :address, placeholder: "東京都港区芝公園4-2−8", class: "form-control"
+    br
+    = f.submit "登録する", class: "btn btn-primary"
 
 = flash[:danger]
