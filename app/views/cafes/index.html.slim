@@ -1,8 +1,8 @@
-#map 
-#marker-data data-position=@all_cafe_position
+#roaster
+  h1 コーヒーロースター一覧
+  #map 
+  #marker-data data-position=@all_cafe_position
 
-=javascript_pack_tag 'home/index'
+  =javascript_pack_tag 'home/index'
 
-script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback"
-style
-  | #map { height: 600px; width: 600px; }
+  script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_API_KEY']}&callback"
