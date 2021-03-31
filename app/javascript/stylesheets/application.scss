@@ -1,1 +1,10 @@
-@import "bootstrap"; 
+@import "bootstrap";
+.header-flex {
+  float: right;
+  margin: 30px;
+  margin-right: 600px;
+}
+
+.header {
+  overflow: hidden;
+}
