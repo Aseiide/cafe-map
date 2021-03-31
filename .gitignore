@@ -38,3 +38,8 @@ yarn-debug.log*
 
 /.env
 vendor/bundle
+screenshot/form_after.png
+screenshot/form_before.png
+screenshot/map_after.png
+screenshot/map_before.png
+screenshot/スクリーンショット 2021-03-25 15.13.48.png
