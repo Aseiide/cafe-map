@@ -16,4 +16,11 @@ RSpec.describe Cafe, type: :model do
     )
     expect(hoge.save).to be_falsey
   end
+
+  it "nameが40字以上かつaddressが50文字以上では保存できない" do
+    bar = Cafe.new(
+      name: "a" * 41, 
+      address: "a" * 51
+    )
+  end
 end
