@@ -40,6 +40,4 @@ RSpec.describe Cafe, type: :model do
     )
     expect(baz.save).to be_falsey
   end
-
-
 end
