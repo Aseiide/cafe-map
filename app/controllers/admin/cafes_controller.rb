@@ -9,6 +9,7 @@ class Admin::CafesController < Admin::BaseController
     uri = URI.parse("https://maps.googleapis.com/maps/api/geocode/json?#{address_parameter}&key=#{ENV["MAP_API_KEY"]}")
     response = Net::HTTP.get_response(uri)
     @result = JSON.parse(response.body)
+    # binding.pry
     @cafe = Cafe.new(
       name: cafe_params["name"],
       address: cafe_params["address"],
@@ -18,6 +19,10 @@ class Admin::CafesController < Admin::BaseController
     if @cafe.save
       puts "保存に成功"
       redirect_to cafes_path
+    elsif 
+      @result["status"] == "ZERO_RESULTS"
+      flash.now[:danger] = "保存に失敗しました"
+      render action: :new
     else
       flash.now[:danger] = "保存に失敗しました"
       render action: :new
