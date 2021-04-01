@@ -17,10 +17,29 @@ RSpec.describe Cafe, type: :model do
     expect(hoge.save).to be_falsey
   end
 
-  it "nameが40字以上かつaddressが50文字以上では保存できない" do
+  it "nameが40文字以上と正しい住所では保存できない" do
     bar = Cafe.new(
+      name: "a" * 41,
+      address: "東京都港区芝公園4-2-8"
+    )
+    expect(bar.save).to be_falsey
+  end
+
+  it "正しい名前と住所と住所が51文字以上では保存できない" do
+    hogehoge = Cafe.new(
+      name: "Test Roaster 1",
+      address: "a" * 51
+    )
+    expect(hogehoge.save).to be_falsey
+  end
+  
+  it "nameが40字以上かつaddressが50文字以上では保存できない" do
+    baz = Cafe.new(
       name: "a" * 41, 
       address: "a" * 51
     )
+    expect(baz.save).to be_falsey
   end
+
+
 end
