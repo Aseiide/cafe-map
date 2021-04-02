@@ -2,10 +2,13 @@ doctype html
 html
   head
     title
-      | Myapp
+      | ROASTERS MAP
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    .header
+      = image_tag "logo.png", size: "100x100"
+      .header-flex 自家焙煎のコーヒーショップを紹介します
     = yield
