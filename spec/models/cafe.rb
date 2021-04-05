@@ -1,43 +1,45 @@
 require "rails_helper"
 
 RSpec.describe Cafe, type: :model do
-  it "nameとaddressを埋めると保存できる" do
+  it "addressが空でないとき保存できる" do
     foo = Cafe.new(
-      name: "Cafe1",
       address: "東京都千代田区1-1"
     )
     expect(foo.save).to be_truthy
   end
 
-  it "nameとaddressが空では保存できない" do
+  it "addressが空のとき保存できない" do
     hoge = Cafe.new(
-      name: "",
       address: ""
     )
     expect(hoge.save).to be_falsey
   end
 
-  it "正しいnameで正確な住所では保存できる" do
+  it "addressが50文字以下の時、保存できる" do
     qux = Cafe.new(
-      name: "Test Roaster",
-      address: "福岡県北九州市八幡西区西鳴水1-1-1"
+      address: "福岡県北九州市小倉北区浅野１丁目１−１"
     )
     expect(qux.save).to be_truthy
   end
 
-  it "正しいnameで都道府県なしの住所では保存できない" do
+  it "addressが51文字以上の時、保存できない" do
     quxqux = Cafe.new(
-      name: "Test Roaster",
-      address: "北九州市八幡西区西鳴水1-1-1"
+      address: "a" * 51
     )
     expect(quxqux.save).to be_falsey
   end
 
-  it "正しいnameで海外の住所では保存できない" do
+  it "都道府県が書かれているとき、保存できる" do
     quux = Cafe.new(
-      name: "Test Roaster",
-      address: "ホワイトハウス 1600 Pennsylvania Avenue NW, Washington, DC 20500 アメリカ合衆国"
+      address: "福岡県福岡市博多区博多駅中央街１−１"
     )
-    expect(quux.save).to be_falsey
+    expect(quux.save).to be_truthy
+  end
+
+  it "都道府県が書かれていない時、保存できない" do
+    quuxquuux = Cafe.new(
+      address: "北九州市小倉北区浅野１丁目１−１"
+    )
+    expect(quuxquuux.save).to be_falsey
   end
 end
