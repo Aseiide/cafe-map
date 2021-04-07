@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Cafe, type: :model do
-  let(:cafe_name) {Cafe.new(name: "Test Roaster")}
+  let(:cafe_name) {"Test Roaster"}
   context "住所について" do
     it "入力されている時、有効である" do
       cafe = Cafe.new(
