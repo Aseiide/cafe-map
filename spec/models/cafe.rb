@@ -8,6 +8,9 @@ RSpec.describe Cafe, type: :model do
     let(:address) { "東京都千代田区丸の内１丁目" }
 
     context "入力されている時、有効である" do
+      it "has a valid factory" do
+        expect(FactoryBot.build(:cafe)).to be_valid
+      end
 
       it { expect(cafe).to be_valid }
     end
