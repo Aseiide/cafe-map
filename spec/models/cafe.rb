@@ -20,19 +20,16 @@ RSpec.describe Cafe, type: :model do
 
     context "長さが51文字以上の時、無効である" do
       cafe = FactoryBot.build(:cafe, address: "東京都千代田区千代田" + "1-"*45)
-
       it { expect(cafe).not_to be_valid }
     end
 
     context "都道府県ありの時、有効である" do
       cafe = FactoryBot.build(:cafe)
-
       it { expect(cafe).to be_valid }
     end
 
     context "都道府県なしの時、無効である" do
       cafe = FactoryBot.build(:cafe, address: "墨田区押上１-１−２")
-
       it { expect(cafe).not_to be_valid }
     end
   end
