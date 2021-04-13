@@ -4,12 +4,13 @@ RSpec.describe Cafe, type: :model do
 
   describe "住所について" do
     context "入力されている時、有効である" do
-      it { expect(FactoryBot.build(:cafe)).to be_valid }
+      cafe = FactoryBot.build(:cafe)
+      it { expect(cafe).to be_valid }
     end
 
     context "ない時、無効である" do
-      cafe = FactoryBot.build(:cafe, name {""})
-      it { expect(cafe).not_to be_balid }
+      cafe = FactoryBot.build(:cafe, name: "")
+      it { expect(cafe).to be_invalid }
     end
   end
 end
