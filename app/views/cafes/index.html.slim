@@ -1,4 +1,7 @@
 #roaster
+  #flash
+  - if flash[:notice]
+    = flash[:notice]
   h1 コーヒーロースター一覧
   #map 
   #marker-data data-position=@all_cafe_position

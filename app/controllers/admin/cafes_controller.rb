@@ -16,6 +16,7 @@ class Admin::CafesController < Admin::BaseController
       longitude: @result["results"][0]["geometry"]["location"]["lng"]
     )
     if @cafe.save
+      flash[:notice] = "保存しました"
       # puts "保存に成功"
       redirect_to cafes_path
     else
