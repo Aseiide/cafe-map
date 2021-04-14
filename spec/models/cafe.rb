@@ -12,7 +12,7 @@ RSpec.describe Cafe, type: :model do
     end
 
     context "ない時、無効である" do
-      let (:address){""}
+      let (:address){ "" }
       it { expect(cafe).not_to be_valid }
     end
 
@@ -21,7 +21,7 @@ RSpec.describe Cafe, type: :model do
     end
 
     context "長さが51文字以上の時、無効である" do
-      let (:address) {"東京都墨田区押" + "1-"*22}
+      let (:address) { "東京都墨田区押" + "1-"*22 }
       it { expect(cafe).not_to be_valid }
     end
 
@@ -45,7 +45,7 @@ RSpec.describe Cafe, type: :model do
     end
 
     context "空文字のとき、無効である" do
-      let(:name){""}
+      let(:name){ "" }
       it { expect(cafe).not_to be_valid }
     end
 
