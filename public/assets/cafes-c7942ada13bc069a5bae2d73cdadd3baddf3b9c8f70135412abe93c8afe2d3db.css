@@ -1,0 +1,18 @@
+/* line 2, app/assets/stylesheets/cafes.scss */
+#roaster {
+  text-align: center;
+}
+
+/* line 6, app/assets/stylesheets/cafes.scss */
+#map {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+}
+
+/* line 12, app/assets/stylesheets/cafes.scss */
+.alert-success {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
