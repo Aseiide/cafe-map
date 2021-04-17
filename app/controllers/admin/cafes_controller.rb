@@ -9,8 +9,8 @@ class Admin::CafesController < Admin::BaseController
     @cafe = Cafe.new(
       name: cafe_params["name"],
       address: cafe_params["address"],
-      latitude: @result["results"][0]["geometry"]["location"]["lat"],
-      longitude: @result["results"][0]["geometry"]["location"]["lng"]
+      latitude: @result["lat"],
+      longitude: @result["lng"]
     )
 
     if @cafe.save
