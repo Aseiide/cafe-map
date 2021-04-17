@@ -1,5 +1,4 @@
 require "rails_helper"
-require "pry"
 
 RSpec.describe "API Test", type: :request do
   describe "アプリケーションのエンドポイントにアクセスできるか" do
