@@ -4,7 +4,7 @@ class Admin::CafesController < Admin::BaseController
   end
 
   def create
-    @result = Map.new(params[:cafe]).result
+    @result = MapQuery.new(params[:cafe]).result
 
     @cafe = Cafe.new(
       name: cafe_params["name"],
