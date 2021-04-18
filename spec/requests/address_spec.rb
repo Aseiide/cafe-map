@@ -24,9 +24,11 @@ RSpec.describe "API Test", type: :request do
       end
     end
 
+    # Map APIで返してほしいのは緯度経度だけ
+    # 
     context "すべてのパラメータが揃っている時" do
       it "/cafes にリダイレクトする" do
-        post admin_cafes_path, params:{ cafe: {address:"東京都墨田区押上１-１−２", name: "Test Roaster", latitude: "35.7100069", longitude: "139.8108103"} }
+        post admin_cafes_path, params:{ cafe: {address:"東京都墨田区押上１-１−２", name: "Test Roaster"} }
         expect(response).to redirect_to cafes_path
       end
     end
