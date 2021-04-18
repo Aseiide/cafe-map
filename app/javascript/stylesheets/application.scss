@@ -1,5 +1,4 @@
 @import "bootstrap";
-@import "~bootstrap/scss/bootstrap";
 .header-flex {
   float: right;
   margin: 30px;
@@ -8,4 +7,32 @@
 
 .header {
   overflow: hidden;
+}
+
+//user画面のCSSはここに書く
+#roaster {
+  text-align: center;
+}
+
+#map {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+}
+
+.alert-success {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+// admin
+.admin {
+  width: 600px;
+  height: 40px;
+  margin: auto;
+}
+
+.admin h2 {
+  font-size: 18px;
 }
