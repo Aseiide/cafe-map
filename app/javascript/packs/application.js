@@ -9,8 +9,8 @@ require("channels")
 
 import 'bootstrap';
 import '../stylesheets/application.scss';
-import '../stylesheets/admin_cafes.scss';
-import '../stylesheets/user_cafes.scss';
+import '../stylesheets/admin/application';
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
