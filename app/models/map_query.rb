@@ -10,7 +10,8 @@ class MapQuery
   end
 
   def result
-    response = Net::HTTP.get_response(uri)
-    JSON.parse(response.body)
+    api_response = Net::HTTP.get_response(uri)
+    response_body = JSON.parse(api_response.body)
+    response_body["results"][0]["geometry"]["location"]
   end
 end
