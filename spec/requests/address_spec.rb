@@ -37,8 +37,6 @@ RSpec.describe "API Test", type: :request do
           cafe: { 
           address:"東京都墨田区押上１-１−２",
           name: "Test Roaster",
-          latitude: query_mock.result[:lat],
-          longitude: query_mock.result[:lng]
           }
         }
 
