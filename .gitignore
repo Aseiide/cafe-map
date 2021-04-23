@@ -23,7 +23,7 @@ vendor/bundle
 /storage/*
 !/storage/.keep
 
-app/assets/javascript/*.js
+/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
