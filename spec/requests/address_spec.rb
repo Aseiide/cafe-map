@@ -9,7 +9,7 @@ RSpec.describe "API Test", type: :request do
         expect(response).to have_http_status(200)
       end
     end
-  
+
     context "GETで / にアクセスした時" do
       it "HTTPステータスコードが200でOKとなる" do
         get root_path
@@ -25,8 +25,21 @@ RSpec.describe "API Test", type: :request do
     end
 
     context "すべてのパラメータが揃っている時" do
+      let(:query_mock) { instance_double(MapQuery) }
+
+      before do
+        allow(MapQuery).to receive(:new).and_return query_mock
+        allow(query_mock).to receive(:result) { { lat: '35.7100069', lng: '139.8108103' } }
+      end
+
       it "/cafes にリダイレクトする" do
-        post admin_cafes_path, params:{ cafe: {address:"東京都墨田区押上１-１−２", name: "Test Roaster", latitude: "35.7100069", longitude: "139.8108103"} }
+        post admin_cafes_path, params:{
+          cafe: { 
+          address:"東京都墨田区押上１-１−２",
+          name: "Test Roaster",
+          }
+        }
+
         expect(response).to redirect_to cafes_path
       end
     end
