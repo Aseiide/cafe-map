@@ -8,8 +8,12 @@ ROASTERS MAP は、近くの自家焙煎のコーヒーショップをマップ�
 
 # 使用している技術など
 
-- Ruby on Rails
-- Google Maps API
+- Ruby 2.7.2
+- Ruby on Rails 6.0.3.6
+- Bootstrap
+- RSpec
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
+- [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview)
 - Heroku
 
 # 使用方法
@@ -20,7 +24,7 @@ ROASTERS MAP は、近くの自家焙煎のコーヒーショップをマップ�
   システム環境設定 > セキュリティとプライバシー > 位置情報サービス > 使っているブラウザにチェックを入れる
 
 2. 現在地を取得して近くのコーヒーショップを表示します
-   なお、現在は東京都と福岡市を中心に表示しています。
+   なお、現在は東京都と福岡市を中心に表示しています
 
 # 今後実装予定の機能
 
