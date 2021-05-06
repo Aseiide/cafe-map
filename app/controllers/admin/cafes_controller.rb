@@ -18,6 +18,9 @@ class Admin::CafesController < Admin::BaseController
     if @cafe.save
       flash[:notice] = "保存しました"
       redirect_to cafes_path
+    elsif @status != "OK"
+      flash.now[:danger] = "保存に失敗しました"
+      render action: :new
     else
       flash.now[:danger] = "保存に失敗しました"
       render action: :new
