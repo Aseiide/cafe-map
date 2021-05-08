@@ -5,6 +5,7 @@ class Admin::CafesController < Admin::BaseController
 
   def create
     @result = MapQuery.new(params[:cafe]).result
+    @status = MapQuery.new(params[:cafe]).status
 
     @cafe = Cafe.new(
       name: cafe_params["name"],
@@ -16,6 +17,9 @@ class Admin::CafesController < Admin::BaseController
     if @cafe.save
       flash[:notice] = "保存しました"
       redirect_to cafes_path
+    elsif @status != "OK"
+      flash.now[:danger] = "保存に失敗しました"
+      render action: :new
     else
       flash.now[:danger] = "保存に失敗しました"
       render action: :new
