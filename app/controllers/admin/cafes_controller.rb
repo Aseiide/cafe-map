@@ -6,7 +6,6 @@ class Admin::CafesController < Admin::BaseController
   def create
     @result = MapQuery.new(params[:cafe]).result
     @status = MapQuery.new(params[:cafe]).status
-    binding.pry
 
     @cafe = Cafe.new(
       name: cafe_params["name"],
